@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="btnlogin">#DF658E</color>
+    <color name="emailbox">#DC8E8E</color>
+    <color name="passwordbox">#DC8E8E</color>
+    <color name="logintext">#000000</color>
+    <color name="border">#000000</color>
+    <color name="startcolor">#ee9ca7</color>
+    <color name="midcolor">#203A43</color>
+    <color name="endcolor">#ffdde1</color>
+
 </resources>

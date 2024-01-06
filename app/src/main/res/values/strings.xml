@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Quizzify</string>
+    <string name="app_name">Welcome To Quizzify</string>
+    <string name="name">Quizzify</string>
+    <string name="get_started">Get Started</string>
+    <string name="openining_line">Quizzing is thrilling, join the competition \n and get willing!</string>
+    <string name="login_now">Login Now</string>
+    <string name="below_login">Please Login To Continue</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="noacct_signup">Do not have an account?Sign up</string>
+    <string name="email_box">Email</string>
+    <string name="pass_box">Password</string>
+    <string name="stayConnected">Stay Connected</string>
+    <string name="signUpmsg">Enter your Email address and password to get access to your account</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="loginMsg">Already have an account?Login</string>
+    <string name="quizdaily">Quiz yourself daily</string>
+    <string name="signInGoogle">Sign In with Google</string>
+    <string name="signout">Sign Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rank">RANK</string>
 </resources>
