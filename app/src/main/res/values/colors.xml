@@ -8,5 +8,5 @@
     <color name="startcolor">#ee9ca7</color>
     <color name="midcolor">#203A43</color>
     <color name="endcolor">#ffdde1</color>
-
+    <color name="white">#ffff</color>
 </resources>

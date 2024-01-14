@@ -51,7 +51,8 @@ class QuestionActivity : AppCompatActivity() {
 
     private fun setUpFirestore() {
         val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-        var genre: String? = intent.getStringExtra("GENRE")
+        val genre: String? = intent.getStringExtra("GENRE")
+        Log.d("Genera",genre.toString())
         if (genre != null) {
             firestore.collection("quizzes").whereEqualTo("title", genre)
                 .get()

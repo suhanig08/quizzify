@@ -6,9 +6,10 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.suhani.quizzify.R
 import com.suhani.quizzify.databinding.ActivityMainBinding
-import com.suhani.quizzify.home_fragment
-import com.suhani.quizzify.leaderboard_fragment
-import com.suhani.quizzify.profile
+import com.suhani.quizzify.fragments.AddquizFragment
+import com.suhani.quizzify.fragments.home_fragment
+import com.suhani.quizzify.fragments.leaderboard_fragment
+import com.suhani.quizzify.fragments.profile
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.Home ->replaceFragment(home_fragment())
                 R.id.Profile ->replaceFragment(profile())
                 R.id.Leaderboard ->replaceFragment(leaderboard_fragment())
+                R.id.addquiz->replaceFragment(AddquizFragment())
 
             else->{
 
