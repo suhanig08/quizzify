@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2:00 min"
+            android:text="txt"
             android:textColor="#45ED4C"
             android:textSize="20sp"
             android:textStyle="bold"/>
@@ -73,13 +73,6 @@
             android:textColor="#ffff"
             android:textStyle="bold"
             android:textSize="18sp"/>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:id="@+id/bookmarkopt"
-            android:layout_height="24dp"
-            android:layout_weight="1"
-            android:src="@drawable/ookmark_white"/>
 
 
 

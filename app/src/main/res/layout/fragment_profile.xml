@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:backgroundTint="#D16363"
+                android:backgroundTint="#655F5F"
                 app:cardCornerRadius="45dp">
 
                 <ImageView
@@ -46,7 +46,7 @@
                     android:layout_height="60dp"
                     android:id="@+id/profile_img_text"
                     android:background="@drawable/circle"
-                    android:backgroundTint="#E83232"
+                    android:backgroundTint="#655F5F"
                     android:gravity="center"
                     android:text="A"
                     android:textColor="#ffff"
@@ -173,60 +173,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/bookmark_btn"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/baseline_bookmark_border_24"
-                    app:tint="#BD2A2A"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Saved Questions"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/leaderboard_btn"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/trophy_svgrepo_com"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Leaderboard"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

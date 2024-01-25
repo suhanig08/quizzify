@@ -1,6 +1,5 @@
 package com.suhani.quizzify.adapters
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -8,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -16,10 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.suhani.quizzify.R
 import com.suhani.quizzify.activities.startQuiz
 import com.suhani.quizzify.models.Quiz
+import com.suhani.quizzify.models.Quizmodel
 import com.suhani.quizzify.utils.colorPicker
 import com.suhani.quizzify.utils.iconPicker
 
-class QuizAdapter(val context: Context?, val quizzes: List<Quiz>):RecyclerView.Adapter<QuizAdapter.QuizViewHolder>() {
+class QuizAdapter(val context: Context?,val titles:List<String>):RecyclerView.Adapter<QuizAdapter.QuizViewHolder>() {
 
     inner class QuizViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var textviewGenre: TextView = itemView.findViewById(R.id.quizGenre)
@@ -34,18 +33,17 @@ class QuizAdapter(val context: Context?, val quizzes: List<Quiz>):RecyclerView.A
     }
 
     override fun getItemCount(): Int {
-        return quizzes.size
+        return titles.size
     }
 
     override fun onBindViewHolder(holder: QuizViewHolder, position: Int) {
 
-        holder.textviewGenre.text=quizzes[position].title
+        holder.textviewGenre.text=titles[position]
         holder.cardContainer.setCardBackgroundColor(Color.parseColor(colorPicker.getColor()))
         holder.iconView.setImageResource(iconPicker.getIcons())
         holder.itemView.setOnClickListener {
             val intent= Intent(context,startQuiz::class.java)
-            Log.d("Genera",quizzes[position].title)
-            intent.putExtra("GENRE",quizzes[position].title)
+            intent.putExtra("GENRE",titles[position])
             context?.startActivity(intent)
         }
 

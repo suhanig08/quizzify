@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
+        android:background="@drawable/gradient2"
         android:orientation="vertical"
         android:paddingTop="30dp"
         android:paddingStart="30dp"
@@ -25,8 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/chewy"
-            android:text="Add quiz"
+            android:paddingTop="20dp"
+            android:text="Create your own quiz!"
             android:textColor="#000000"
+            android:paddingBottom="2dp"
             android:textSize="35sp" />
 
 
@@ -35,87 +37,44 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="32dp"
-            android:background="@drawable/edit_txt"
+            android:background="@drawable/edittxt2"
             android:ems="10"
             android:hint="Title"
             android:inputType="text"
             android:textSize="16sp"/>
 
         <EditText
-            android:id="@+id/questionbox"
+            android:id="@+id/amtQ"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_txt"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edittxt2"
             android:ems="10"
-            android:hint="Question"
+            android:hint="Number of questions"
             android:inputType="text"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
         <EditText
-            android:id="@+id/option1"
+            android:id="@+id/timeQuiz"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_txt"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edittxt2"
             android:ems="10"
-            android:hint="Option1"
+            android:hint="Time in seconds"
             android:inputType="text"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
-        <EditText
-            android:id="@+id/option2"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_txt"
-            android:ems="10"
-            android:hint="Option2"
-            android:inputType="text"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/option3"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_txt"
-            android:ems="10"
-            android:hint="Option3"
-            android:inputType="text"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/option4"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_txt"
-            android:ems="10"
-            android:hint="Option4"
-            android:inputType="text"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/answer"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edit_txt"
-            android:ems="10"
-            android:hint="Answer"
-            android:inputType="text"
-            android:textSize="16sp" />
 
         <Button
-            android:id="@+id/submitQuiz"
+            android:id="@+id/nextbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/btn_primary"
+            android:background="@drawable/btn2"
             android:textAlignment="center"
             android:fontFamily="@font/chewy"
-            android:text="SUBMIT"
+            android:text="NEXT"
             android:textColor="@color/logintext"
             android:textSize="25sp" />
 

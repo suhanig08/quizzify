@@ -10,7 +10,7 @@
 
     <style name="Base.Theme.Quizzify.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
     <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">@color/startcolor</item>
+        <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryDark">@color/endcolor</item>
         <item name="colorAccent">@color/btnlogin</item>
         <item name="android:windowBackground">@color/white</item>
