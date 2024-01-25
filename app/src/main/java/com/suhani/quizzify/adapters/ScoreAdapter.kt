@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.suhani.quizzify.R
-import com.suhani.quizzify.models.user
+import com.suhani.quizzify.models.data
 
-class ScoreAdapter(val context: Context?, val list:List<user>, var i: Int =1):RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder>() {
+class ScoreAdapter(val context: Context?, val list:List<data>, var i: Int =1):RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder>() {
 
 
     inner class ScoreViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

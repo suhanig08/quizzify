@@ -1,27 +1,21 @@
 package com.suhani.quizzify.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.suhani.quizzify.R
 import com.suhani.quizzify.adapters.ScoreAdapter
-import com.suhani.quizzify.models.user
+import com.suhani.quizzify.models.data
 
 class leaderboard_fragment : Fragment() {
 
     private lateinit var adapter: ScoreAdapter
     private lateinit var dbRef:DatabaseReference
-    private  var list= mutableListOf<user>()
+    private  var list= mutableListOf<data>()
 
 
     override fun onCreateView(

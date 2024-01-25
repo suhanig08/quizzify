@@ -34,6 +34,7 @@ class QuestionActivity : AppCompatActivity() {
     private lateinit var dbRef:DatabaseReference
     private var questions = mutableListOf<Quizmodel>()
     private var timer=0L
+    private lateinit var countDownTimer:CountDownTimer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +43,7 @@ class QuestionActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.quizCat).text=x
         timer=intent.getStringExtra("time")!!.toLong()
         setUpFireBase()
-        object :CountDownTimer(timer*1000,1000 ){
+        countDownTimer=object :CountDownTimer(timer*1000,1000 ){
             override fun onTick(millisUntilFinished: Long) {
                 findViewById<TextView>(R.id.quiztime).setText("Time: "+millisUntilFinished / 1000)
             }
@@ -73,6 +74,7 @@ class QuestionActivity : AppCompatActivity() {
                         questions.add(quizData!!)
                         bindViews()
                     }
+                    Log.d("neww",questions.toString())
                     findViewById<TextView>(R.id.Qno).text="${index +1}/${questions[index].amt}"
                 }
             }
@@ -96,6 +98,7 @@ class QuestionActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.Qno).text="${index +1}/${questions[index].amt}"
         }
         findViewById<Button>(R.id.btnSubmit).setOnClickListener {
+            countDownTimer.cancel()
             val intent= Intent(this,ResultActivity::class.java)
             intent.putExtra("title",x)
             intent.putExtra("list",questions as Serializable)
@@ -110,7 +113,7 @@ class QuestionActivity : AppCompatActivity() {
 
         if (index == 0) {
             findViewById<Button>(R.id.btnNext).visibility = View.VISIBLE
-        } else if (index == questions!!.size-1) {
+        } else if (index == questions[index].amt!! -1) {
             findViewById<Button>(R.id.btnSubmit).visibility = View.VISIBLE
             findViewById<Button>(R.id.btnPrevious).visibility = View.VISIBLE
         } else {

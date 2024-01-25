@@ -6,28 +6,38 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.suhani.quizzify.R
-import com.suhani.quizzify.models.user
+import com.suhani.quizzify.models.Quizmodel
+import com.suhani.quizzify.models.data
 
 class editProfileActivity : AppCompatActivity() {
 
     private lateinit var dbRef:DatabaseReference
     private lateinit var name:EditText
     private lateinit var userid:String
+    private lateinit var auth:FirebaseAuth
+    var score=0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
-        dbRef=FirebaseDatabase.getInstance().getReference("Users")
-        userid=dbRef.push().key!!
+        auth=FirebaseAuth.getInstance()
+        userid= auth.currentUser!!.uid
+        dbRef=FirebaseDatabase.getInstance().getReference("Users").child(userid)
         name=findViewById(R.id.Namebox)
-
+        //setUpFireBase()
         findViewById<Button>(R.id.savebtn).setOnClickListener {
             saveaddquizdata()
         }
     }
+
+
 
     private fun saveaddquizdata() {
         val etname=name.text.toString()
@@ -35,12 +45,11 @@ class editProfileActivity : AppCompatActivity() {
         if (etname.isEmpty()) {
             name.error = "Please enter the name"
         } else {
-            val user =
-                user(
-                    etname,
-                    0L
+            val data =
+                data(
+                    etname
                 )
-            dbRef.child(userid).push().setValue(user)
+            dbRef.push().setValue(data)
                 .addOnCompleteListener {
                     Toast.makeText(this,"Saved",Toast.LENGTH_SHORT).show()
                     val intent=Intent(this,profileActivity::class.java)

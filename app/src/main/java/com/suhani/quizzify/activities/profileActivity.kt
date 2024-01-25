@@ -3,7 +3,6 @@ package com.suhani.quizzify.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -11,14 +10,13 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.suhani.quizzify.R
-import com.suhani.quizzify.models.Quizmodel
-import com.suhani.quizzify.models.user
+import com.suhani.quizzify.models.data
 
 class profileActivity : AppCompatActivity() {
 
     private lateinit var dbRef:DatabaseReference
     private lateinit var userid:String
-    private var userlist = mutableListOf<user>()
+    private var userlist = mutableListOf<data>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,10 +30,9 @@ class profileActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
                         for (userSnap in snapshot.children) {
-                            val userData=userSnap.getValue(user::class.java)
-                            userlist.add(userData!!)
+                            val dataData=userSnap.getValue(data::class.java)
+                            userlist.add(dataData!!)
                         }
-                        findViewById<TextView>(R.id.profileName).text=userlist.na
                     }
                 }
 

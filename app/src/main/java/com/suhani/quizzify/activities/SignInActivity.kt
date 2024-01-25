@@ -20,12 +20,13 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.suhani.quizzify.R
 import com.suhani.quizzify.databinding.ActivitySignInBinding
+import com.suhani.quizzify.models.data
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-
+   // private lateinit var name:String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +34,13 @@ class SignInActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //name=intent.getStringExtra("name").toString()
+
 
         binding.btnSignUp.setOnClickListener {
             val intent = Intent(this, signUpActivity::class.java)
             startActivity(intent)
             finish()
-
-
         }
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmailAddressL.text.toString()
@@ -49,6 +50,7 @@ class SignInActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, MainActivity::class.java)
+                        //intent.putExtra("name",name)
                         startActivity(intent)
                         finish()
                     } else {

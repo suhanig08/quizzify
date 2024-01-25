@@ -21,7 +21,6 @@ class home_fragment : Fragment() {
 
     private lateinit var adapter: QuizAdapter
     private var titlelist= mutableListOf<String>()
-   // private lateinit var firestore: FirebaseFirestore
     private lateinit var dbRef: DatabaseReference
 
     override fun onCreateView(
@@ -34,7 +33,6 @@ class home_fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //setUpFireStore()
         setUpFireBase()
         adapter = QuizAdapter(context,titlelist)
         val recyclerView: RecyclerView = view.findViewById(R.id.quizRecyclerView)
@@ -68,19 +66,4 @@ class home_fragment : Fragment() {
 
         })
     }
-
-
-    /*private fun setUpFireStore() {
-        firestore = FirebaseFirestore.getInstance()
-        val collectionReference: CollectionReference = firestore.collection("quizzes")
-        collectionReference.addSnapshotListener { value, error ->
-            if (value == null || error != null) {
-                Toast.makeText(context, "Error fetching data", Toast.LENGTH_SHORT).show()
-                return@addSnapshotListener
-            }
-            quizlist.clear()
-            quizlist.addAll(value.toObjects(Quizmodel::class.java))
-            adapter.notifyDataSetChanged()
-        }
-    }*/
 }
